@@ -23,7 +23,7 @@ class StudentDetails(models.Model):
     student_phone_number = models.CharField(max_length=10, null=True,blank=True)
     student_address = models.TextField(null=True,blank=True)
    # student_subject = models.ForeignKey(SubjectDetails, related_name='student_subject_code', on_delete=models.CASCADE)
-    student_marks = models.IntegerField(null=True, blank=True)
+    student_pass_fail = models.BooleanField(default=False)
     student_total = models.IntegerField(null=True, blank=True)
     student_rank = models.IntegerField(null=True, blank=True)
     

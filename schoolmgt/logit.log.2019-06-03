@@ -1,0 +1,26 @@
+2019-06-03 08:25:00,604 [INFO] : Sudent Details 'NoneType' object has no attribute 'description' attempted by admin
+2019-06-03 08:25:31,333 [INFO] : Sudent Details 'NoneType' object has no attribute 'description' attempted by admin
+2019-06-03 09:12:45,397 [INFO] : Sudent Details column "student_total" does not exist
+LINE 1: select id, student_name, student_total from student_details ...
+                                 ^
+ attempted by admin
+2019-06-03 09:12:51,521 [INFO] : Sudent Details column "student_total" does not exist
+LINE 1: select id, student_name, student_total from student_details ...
+                                 ^
+ attempted by admin
+2019-06-03 09:12:51,752 [INFO] : Sudent Details column "student_total" does not exist
+LINE 1: select id, student_name, student_total from student_details ...
+                                 ^
+ attempted by admin
+2019-06-03 09:12:51,935 [INFO] : Sudent Details column "student_total" does not exist
+LINE 1: select id, student_name, student_total from student_details ...
+                                 ^
+ attempted by admin
+2019-06-03 09:12:52,294 [INFO] : Sudent Details column "student_total" does not exist
+LINE 1: select id, student_name, student_total from student_details ...
+                                 ^
+ attempted by admin
+2019-06-03 10:52:21,366 [INFO] : Sudent Details relation "subject_details" does not exist
+LINE 1: ...LECT sd.id, sd.subject_name, sd.subject_code FROM subject_de...
+                                                             ^
+ attempted by admin
