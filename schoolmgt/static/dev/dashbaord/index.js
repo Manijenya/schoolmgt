@@ -61,8 +61,10 @@ $.ajax({
 		}
 
 	}else {
-		alert("Error.");
+		alert("Please Enter All Field.");
 	}
+	
+	$('#total_student').text(student_len);
 });
 
 
@@ -75,8 +77,6 @@ $('#submit_data').click(function(e){
 	var datas = getFormValues("#mark_form");
 	datas['subject_len'] = subject_len;
 	datas['student_len'] = student_len;
-	console.log(datas)
-	alert("Afasg")
 	var csrf_data = getCookie('csrf_token');
 	$.ajax({
 		type  : 'POST',
@@ -106,15 +106,13 @@ function rankList(){
 		url   : 'student_list/'	
 	}).done( function(jsondata) {
 		var data = JSON.parse(jsondata);
-		console.log(data)
 		if (data.status == 'Success'){
 			var prev_mark = '';
 			let rank_html = '<tr>';
-			var rank_count = 0, temp_count = 0
+			var rank_count = 0, temp_count = 0,pass_student = 0, fail_student = 0;
 			for(let j=0; j<data.rank.length; j++){
 				curr_mark = data.rank[j]['student_total']
 				pass_fail = data.rank[j]['student_pass_fail']
-				console.log(pass_fail)
 				if(pass_fail){
 					if(curr_mark != prev_mark){
 						prev_mark = curr_mark
@@ -127,12 +125,18 @@ function rankList(){
 						temp_count++
 					}
 					rank_html += '</tr>';
+					pass_student++;
 				}else{
 					rank_html += '<tr><td>'+data.rank[j]['student_name']+'</td><td>'+curr_mark+'</td><td>-</td><td>Fail</td></tr>';
+					fail_student ++;
 				}
 			}
 
 			$('#rank_table_id').html('').append(rank_html);
+			$('#pass_student').text(pass_student);
+			$('#fail_student').text(fail_student);
+			$('#percentage').text((pass_student/student_len)*100+' %');
+			
 		}else {
 			alert("Error.");
 		}

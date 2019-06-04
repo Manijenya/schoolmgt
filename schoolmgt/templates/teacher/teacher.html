@@ -102,25 +102,121 @@
 				</nav>
 				<!-- End of Topbar -->
 				<div class="container-fluid">
+
+
+					<div class="row">
+						<!-- Earnings (Monthly) Card Example -->
+						<div class="col-xl-3 col-md-6 mb-4">
+							<div class="card border-left-primary shadow h-100 py-2">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<div class="col mr-2">
+											<div
+												class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total
+												Students</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800" id="total_student">-</div>
+										</div>
+										<div class="col-auto">
+											<i class="fas fa-calendar fa-2x text-gray-300"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Earnings (Monthly) Card Example -->
+						<div class="col-xl-3 col-md-6 mb-4">
+							<div class="card border-left-success shadow h-100 py-2">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<div class="col mr-2">
+											<div
+												class="text-xs font-weight-bold text-success text-uppercase mb-1">Pass
+												Students</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800" id="pass_student">-</div>
+										</div>
+										<div class="col-auto">
+											<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Earnings (Monthly) Card Example -->
+						<div class="col-xl-3 col-md-6 mb-4">
+							<div class="card border-left-info shadow h-100 py-2">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<div class="col mr-2">
+											<div
+												class="text-xs font-weight-bold text-info text-uppercase mb-1">Fail
+												Students</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800" id="fail_student">-</div>
+										</div>
+										<div class="col-auto">
+											<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Pending Requests Card Example -->
+						<div class="col-xl-3 col-md-6 mb-4">
+							<div class="card border-left-warning shadow h-100 py-2">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<div class="col mr-2">
+											<div
+												class="text-xs font-weight-bold text-warning text-uppercase mb-1">Overall 
+												Percentage</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800" id="percentage">-</div>
+										</div>
+										<div class="col-auto">
+											<i class="fas fa-comments fa-2x text-gray-300"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="card shadow mb-12">
+					<div class="card-body">
 					<form id="mark_form" name="mark_form">
 						<table>
 							<tbody id="mark_table_id">
 							</tbody>
 						</table>
-						<input type="button" id="submit_data" style="float: right" value="Submit"/>
+						<a id="submit_data" class="btn btn-primary btn-icon-split" >
+								<span class="icon text-white-50"> <i class="fas fa-flag"></i>
+								</span> <span class="text">Submit</span>
+						</a>
 					</form>
+					</div>
+				</div>
 						<br> <br>
-						<button onclick="rankList()" style="float: right">Generate Rank</button>
-						<table>
-							<tr>
-								<th width="150px">Name</th>
-								<th width="150px">Marks</th>
-								<th width="150px">Rank</th>
-								<th width="150px">Pass/Fail</th>
-							</tr>
-							<tbody id="rank_table_id">
-							</tbody>
-						</table>
+				{% if role_data == 'admin' %}
+					<div class="card shadow mb-12">
+						<div class="card-body">
+							<a onclick="rankList()" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+							<i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+							<div class="mt-4 mb-4"></div>
+							<table>
+								<tr>
+									<th width="150px">Name</th>
+									<th width="150px">Marks</th>
+									<th width="150px">Rank</th>
+									<th width="150px">Pass/Fail</th>
+								</tr>
+								<tbody id="rank_table_id">
+								</tbody>
+							</table>
+						</div>
+					</div>
+				{% endif %}
 				</div>
 
 			</div>

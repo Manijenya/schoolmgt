@@ -95,6 +95,7 @@ def student_list(request):
                                 ( int(mark), (i+1), (j+1), ))
                 cur.execute(""" update student_details set student_total = %s, student_pass_fail = %s where id = %s""",
                                 ( int(temp_total), pass_fail, (i+1),))
+            json_data['status'] = 'Success'
     except Exception as e:
         print "----------",e
         logger_obj.info("Sudent Details "+ str(e) +" attempted by "+str(request.user.username))
