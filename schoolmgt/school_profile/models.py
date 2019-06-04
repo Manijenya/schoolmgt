@@ -48,3 +48,22 @@ class TeacherDetails(models.Model):
         indexes = [
             models.Index(fields=['teacher_name'],name='teacher_details_idx1'),
         ]
+        
+
+        
+class MarkDetails(models.Model):
+    student_id = models.ForeignKey(StudentDetails, related_name='student_id', on_delete=models.CASCADE)
+    subject_id = models.ForeignKey(SubjectDetails, related_name='subject_id', on_delete=models.CASCADE)
+    mark = models.IntegerField(null=False)
+    
+    def __unicode__(self):
+       return str(self.mark)
+   
+    class Meta:
+        db_table = 'mark_details'
+        ordering = ['id']
+        indexes = [
+            models.Index(fields=['mark'],name='mark_details_idx1'),
+        ]
+        
+    

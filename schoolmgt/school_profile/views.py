@@ -51,7 +51,9 @@ def student_list(request):
             role_data= dictfetchall(cur)
             cur.execute("select subject_name, subject_code from subject_details order by id")
             subject_data= dictfetchall(cur)
-            print "safdsafasdf", subject_data
+            cur.execute("""select sd.subject_name, md.mark, md.student_id_id from subject_details sd  inner join mark_details md on md.subject_id_id = sd.id 
+            order by md.student_id_id""")
+            mark_data = dictfetchall(cur)
             cur.execute("select id, student_name from student_details order by id")
             student_data= dictfetchall(cur)
             cur.execute("select id, student_name , student_total from student_details order by student_total desc")

@@ -85,8 +85,8 @@ if ENVIRONMENT == "Dev":
             # 'USER': 'next',
             # 'PASSWORD': 'next',
             # 'HOST': '192.168.11.88',
-            'USER': 'next',
-            'PASSWORD': 'next',
+            'USER': 'postgres',
+            'PASSWORD': 'postgres',
             'HOST': 'localhost',
             'PORT': '5432',
         }

@@ -27,11 +27,11 @@ $.ajax({
 				}else{
 					console.log(data )
 					var dat_index = (subject_arr.indexOf(data.role_data[0]['subject_name']) + 2)
-					if(dat_index == i){
+					//if(dat_index == i){
 						html_str_m += '<td width="150px"><input id="'+subject_arr[i-2]+j+'" class="numberValidate" name="'+subject_arr[i-2]+j+'" Placehodler="Enter Marks" type="number" min="1" ></td>'
-					}else{
-						html_str_m += '<td width="150px"><input id="'+subject_arr[i-2]+j+'" class="numberValidate" name="'+subject_arr[i-2]+j+'" Placehodler="Enter Marks" type="number" min="1" readonly></td>'
-					}
+					//}/*else{
+					///	html_str_m += '<td width="150px"><input id="'+subject_arr[i-2]+j+'" class="numberValidate" name="'+subject_arr[i-2]+j+'" Placehodler="Enter Marks" type="number" min="1" readonly></td>'
+					//}*/
 				}
 			}
 			html_str_m += '</tr>'
